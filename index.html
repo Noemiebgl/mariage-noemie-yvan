@@ -159,11 +159,35 @@ body{color:#111111;font-weight:500}
   .hero{min-height:500px;background-position:59% 72%;}
   .hero-content{padding-top:75px;padding-bottom:25px;}
 }
+
+/* V13 — navigation mobile élégante, sans modifier la mise en page */
+.menu-backdrop{display:none}
+@media(max-width:760px){
+ .nav{left:0;right:0;transform:none;width:100%;}
+ .menu-toggle{display:flex;align-items:center;justify-content:center;width:46px;height:46px;padding:8px;background:transparent;border:0;border-radius:0;position:relative;z-index:1004;cursor:pointer;color:#111}
+ .menu-toggle:focus-visible{outline:2px solid #072F19;outline-offset:3px}
+ .hamburger{display:flex;width:27px;height:21px;flex-direction:column;justify-content:space-between;align-items:center}
+ .hamburger span{display:block;width:100%;height:1.6px;background:currentColor;border-radius:2px;transition:transform .28s ease,opacity .2s ease}
+ .menu-toggle[aria-expanded="true"]{position:fixed;top:17px;right:20px;color:#111}
+ .menu-toggle[aria-expanded="true"] .hamburger span:first-child{transform:translateY(9.7px) rotate(45deg)}
+ .menu-toggle[aria-expanded="true"] .hamburger span:nth-child(2){opacity:0}
+ .menu-toggle[aria-expanded="true"] .hamburger span:last-child{transform:translateY(-9.7px) rotate(-45deg)}
+ .navlinks,.nav.is-scrolled .navlinks{display:flex;position:fixed;top:0;left:auto;right:0;bottom:0;width:min(84vw,360px);height:100vh;height:100dvh;z-index:1003;flex-direction:column;align-items:stretch;justify-content:center;gap:0;margin:0;padding:90px 35px 65px;background:#F9F6EE;border:0;border-radius:0;box-shadow:-12px 0 35px rgba(0,0,0,.10);transform:translateX(105%);visibility:hidden;pointer-events:none;transition:transform .38s cubic-bezier(.2,.75,.2,1),visibility .38s;overflow-y:auto}
+ .navlinks.open,.nav.is-scrolled .navlinks.open{transform:translateX(0);visibility:visible;pointer-events:auto}
+ .navlinks a{display:block;font-size:29px!important;line-height:1.2;font-weight:500!important;color:#111!important;text-decoration:none!important;text-shadow:none!important;padding:15px 0;border-bottom:1px solid rgba(220,201,166,.58)}
+ .navlinks a.active{color:#072F19!important;font-weight:600!important}
+ .navlinks a.active:before{content:'—';margin-right:10px;color:#072F19}
+ .menu-backdrop{display:block;position:fixed;inset:0;background:rgba(10,20,12,.32);opacity:0;visibility:hidden;pointer-events:none;z-index:999;transition:opacity .35s,visibility .35s}
+ .menu-backdrop.open{opacity:1;visibility:visible;pointer-events:auto}
+ body.menu-open{overflow:hidden}
+}
+@media(prefers-reduced-motion:reduce){.navlinks,.menu-backdrop,.hamburger span{transition:none!important}}
 </style>
 </head>
 <body>
 <header class="hero" id="accueil">
-<nav class="nav" aria-label="Navigation principale"><a href="#accueil" aria-label="Accueil"><img class="logo" src="https://noemiebgl.github.io/mariage-noemie-yvan/images/logo.png" alt="Logo N et Y"></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu">☰ Menu</button><div class="navlinks" id="site-menu"><a class="active" href="#accueil">Accueil</a><a href="jour-j.html">Le jour J</a><a href="votre-venue.html">Votre venue</a><a href="tenues.html">Tenues</a><a href="rsvp.html">RSVP</a></div></nav>
+<nav class="nav" aria-label="Navigation principale"><a href="#accueil" aria-label="Accueil"><img class="logo" src="https://noemiebgl.github.io/mariage-noemie-yvan/images/logo.png" alt="Logo N et Y"></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu"><span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span></button><div class="navlinks" id="site-menu"><a class="active" href="#accueil">Accueil</a><a href="jour-j.html">Le jour J</a><a href="votre-venue.html">Votre venue</a><a href="tenues.html">Tenues</a><a href="rsvp.html">RSVP</a></div></nav>
+<div class="menu-backdrop" aria-hidden="true"></div>
 <div class="hero-content"><div class="hero-copy"><p class="eyebrow">Noémie &amp; Yvan</p><h1>Au jardin de nos racines</h1><div class="shortline"></div><p class="hero-date">16 · 08 · 2028</p><p class="hero-place">Moulin du Ponchou · Brest</p><a class="btn" href="rsvp.html">Je réponds à l'invitation <span aria-hidden="true">→</span></a></div></div>
 </header>
 <main>
@@ -179,6 +203,28 @@ window.addEventListener('scroll',updateNav,{passive:true});
 updateNav();
 const menuButton=document.querySelector('.menu-toggle');
 const menu=document.querySelector('.navlinks');
-menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?'✕ Fermer':'☰ Menu';});
+const backdrop=document.querySelector('.menu-backdrop');
+const setMenuOpen=(open)=>{
+ menu.classList.toggle('open',open);
+ backdrop.classList.toggle('open',open);
+ document.body.classList.toggle('menu-open',open);
+ menuButton.setAttribute('aria-expanded',String(open));
+ menuButton.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
+ if(open){menu.querySelector('a')?.focus({preventScroll:true});}
+ else{menuButton.focus({preventScroll:true});}
+};
+menuButton.addEventListener('click',()=>setMenuOpen(!menu.classList.contains('open')));
+backdrop.addEventListener('click',()=>setMenuOpen(false));
+menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenuOpen(false)));
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'&&menu.classList.contains('open'))setMenuOpen(false);
+ if(e.key==='Tab'&&menu.classList.contains('open')){
+  const focusables=[menuButton,...menu.querySelectorAll('a')];
+  const i=focusables.indexOf(document.activeElement);
+  if(e.shiftKey&&i===0){e.preventDefault();focusables[focusables.length-1].focus();}
+  else if(!e.shiftKey&&i===focusables.length-1){e.preventDefault();focusables[0].focus();}
+ }
+});
+window.matchMedia('(min-width: 761px)').addEventListener('change',e=>{if(e.matches&&menu.classList.contains('open'))setMenuOpen(false)});
 </script>
 </body></html>
