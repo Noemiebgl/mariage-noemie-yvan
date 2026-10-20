@@ -20,17 +20,26 @@
 @media(max-width:760px){.nav{position:fixed;padding:12px 17px}.navlinks{position:absolute;top:100%;left:12px;right:12px}}
 @media(prefers-reduced-motion:reduce){.nav{transition:none}}
 
-/* Version 3 : composition centrée et largeur maîtrisée sur ordinateur */
-@media (min-width: 761px) {
-  body { max-width: 1440px; margin: 0 auto; box-shadow: 0 0 45px rgba(7,47,25,.055); }
-  .hero { min-height: 610px; background-position: center 43%; }
-  .hero:before { background: linear-gradient(90deg,rgba(249,246,238,.76),rgba(249,246,238,.69) 50%,rgba(249,246,238,.36)); }
-  .hero-content { max-width: 1200px; justify-content: center; padding: 95px 40px 75px; }
-  .hero-copy { width: min(640px,100%); margin-inline: auto; }
-  .nav { max-width: 1440px; margin-inline: auto; padding-inline: max(36px,calc((100% - 1160px)/2)); }
-  .welcome p { max-width: 760px; }
-  .roots { max-width: 1120px; }
-}
+/* V4 : proportions fidèles à l'en-tête Google Sites */
+body{max-width:1440px;margin:0 auto;box-shadow:0 0 0 1px rgba(7,47,25,.025)}
+.hero{min-height:505px;background-position:center 44%}
+.hero:before{background:linear-gradient(90deg,rgba(249,246,238,.78) 0%,rgba(249,246,238,.65) 37%,rgba(249,246,238,.29) 70%,rgba(249,246,238,.16) 100%)}
+.nav{left:50%;right:auto;transform:translateX(-50%);width:min(100%,1440px);padding:10px 42px;min-height:68px}
+.logo{width:65px;height:46px}
+.navlinks{gap:26px}.navlinks a{font-size:17px}
+.hero-content{width:100%;max-width:1320px;padding:100px 42px 58px;align-items:center;justify-content:flex-start}
+.hero-copy{width:min(570px,48%);text-align:center}
+.eyebrow{font-size:24px;letter-spacing:.09em;margin:0 0 14px}
+.hero h1{font-size:clamp(66px,5.7vw,86px);line-height:.87;margin:0 0 22px;white-space:nowrap}
+.shortline{width:40px;margin:15px auto}
+.hero-date{font-size:25px;letter-spacing:.06em}
+.hero-place{font-size:24px;margin:0 0 27px}
+.hero-copy .btn{font-size:14px;letter-spacing:.045em;padding:11px 23px;min-width:265px}
+.welcome{padding:35px 22px 31px}.welcome p{font-size:21px;max-width:1000px;line-height:1.35;margin-bottom:10px}
+.details{max-width:1130px}
+@media(max-width:900px){.hero-copy{width:55%}.hero h1{font-size:clamp(62px,7.5vw,76px)}.hero-content{padding-left:28px;padding-right:28px}.nav{padding-left:28px;padding-right:28px}}
+@media(max-width:760px){.hero{min-height:590px;background-position:59% center}.hero:before{background:linear-gradient(180deg,rgba(249,246,238,.76),rgba(249,246,238,.64) 68%,rgba(249,246,238,.50))}.nav{padding:12px 18px}.hero-content{padding:110px 20px 60px;justify-content:center}.hero-copy{width:100%;max-width:470px}.hero h1{font-size:clamp(62px,13vw,83px);white-space:normal}.eyebrow{font-size:20px}.hero-date,.hero-place{font-size:23px}.welcome{padding:40px 22px}.welcome p{font-size:20px}}
+@media(max-width:390px){.hero h1{font-size:60px}.hero-copy .btn{min-width:0;width:auto;max-width:100%}}
 </style>
 </head>
 <body>
