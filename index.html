@@ -139,6 +139,16 @@ body{color:#111111;font-weight:500}
  .information-panel .actions .btn{font-size:16px}
  .hero-date,.hero-place{font-size:24px}
 }
+
+/* V9 — voile plus léger et dégressif, photographie d’origine inchangée */
+@media(min-width:761px){
+ .hero:before{background:linear-gradient(90deg,rgba(249,246,238,.65) 0%,rgba(249,246,238,.53) 28%,rgba(249,246,238,.35) 52%,rgba(249,246,238,.17) 76%,rgba(249,246,238,.11) 100%)}
+ .hero:after{height:115px;background:linear-gradient(180deg,rgba(255,255,255,.30) 0%,rgba(255,255,255,.12) 45%,rgba(255,255,255,0) 100%)}
+}
+@media(max-width:760px){
+ .hero:before{background:linear-gradient(180deg,rgba(249,246,238,.70) 0%,rgba(249,246,238,.60) 55%,rgba(249,246,238,.48) 100%)}
+ .hero:after{background:linear-gradient(180deg,rgba(255,255,255,.26),rgba(255,255,255,0))}
+}
 </style>
 </head>
 <body>
