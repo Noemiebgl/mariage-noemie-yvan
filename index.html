@@ -19,6 +19,18 @@
 .nav.is-scrolled{background:rgba(249,246,238,.96);box-shadow:0 2px 16px rgba(7,47,25,.09);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 @media(max-width:760px){.nav{position:fixed;padding:12px 17px}.navlinks{position:absolute;top:100%;left:12px;right:12px}}
 @media(prefers-reduced-motion:reduce){.nav{transition:none}}
+
+/* Version 3 : composition centrée et largeur maîtrisée sur ordinateur */
+@media (min-width: 761px) {
+  body { max-width: 1440px; margin: 0 auto; box-shadow: 0 0 45px rgba(7,47,25,.055); }
+  .hero { min-height: 610px; background-position: center 43%; }
+  .hero:before { background: linear-gradient(90deg,rgba(249,246,238,.76),rgba(249,246,238,.69) 50%,rgba(249,246,238,.36)); }
+  .hero-content { max-width: 1200px; justify-content: center; padding: 95px 40px 75px; }
+  .hero-copy { width: min(640px,100%); margin-inline: auto; }
+  .nav { max-width: 1440px; margin-inline: auto; padding-inline: max(36px,calc((100% - 1160px)/2)); }
+  .welcome p { max-width: 760px; }
+  .roots { max-width: 1120px; }
+}
 </style>
 </head>
 <body>
