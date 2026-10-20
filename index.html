@@ -40,6 +40,20 @@ body{max-width:1440px;margin:0 auto;box-shadow:0 0 0 1px rgba(7,47,25,.025)}
 @media(max-width:900px){.hero-copy{width:55%}.hero h1{font-size:clamp(62px,7.5vw,76px)}.hero-content{padding-left:28px;padding-right:28px}.nav{padding-left:28px;padding-right:28px}}
 @media(max-width:760px){.hero{min-height:590px;background-position:59% center}.hero:before{background:linear-gradient(180deg,rgba(249,246,238,.76),rgba(249,246,238,.64) 68%,rgba(249,246,238,.50))}.nav{padding:12px 18px}.hero-content{padding:110px 20px 60px;justify-content:center}.hero-copy{width:100%;max-width:470px}.hero h1{font-size:clamp(62px,13vw,83px);white-space:normal}.eyebrow{font-size:20px}.hero-date,.hero-place{font-size:23px}.welcome{padding:40px 22px}.welcome p{font-size:20px}}
 @media(max-width:390px){.hero h1{font-size:60px}.hero-copy .btn{min-width:0;width:auto;max-width:100%}}
+
+/* V5 — contraste noir et encadrement blanc, sans changer les proportions */
+body{background:#ffffff;color:#111111;box-shadow:0 0 0 1px rgba(7,47,25,.10)}
+html{background:#ffffff}
+.navlinks a{font-size:18px;font-weight:600;color:#111111}
+.navlinks .active{text-decoration-color:#111111}
+.hero h1,.eyebrow,.hero-date,.hero-place,.welcome,.detail h2,.detail p,footer{color:#111111}
+.shortline{background:#111111}
+.details{background:var(--ivory)}
+.actions{background:var(--ivory)}
+.btn{color:#ffffff}
+.btn-outline{color:var(--green)}
+.root span{color:#ffffff}
+@media(max-width:760px){.navlinks a{font-size:19px}}
 </style>
 </head>
 <body>
