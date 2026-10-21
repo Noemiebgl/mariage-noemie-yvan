@@ -270,7 +270,38 @@ main{position:relative;z-index:1;background:#fff}
  .place-photo{height:320px;object-position:center center}
 }
 @media(max-width:390px){.hero{min-height:340px}.hero-content{padding-top:105px;padding-bottom:65px}}
-</style></head>
+</style>
+<style>
+/* V8 — Programme horizontal sur ordinateur, vertical sur téléphone */
+.scene{min-height:0!important;padding:54px 28px 64px;overflow:hidden;background:#fff}
+.scene-flower--leaf{display:none!important}
+.scene-flower--yellow{right:-58px;top:auto;bottom:-75px;width:clamp(155px,17vw,235px);transform:none;opacity:.9}
+.timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));width:min(1120px,91%);max-width:none;margin:0 auto;padding:0;gap:0;position:relative}
+.timeline::before{content:"";position:absolute;top:91px;left:10%;right:10%;bottom:auto;width:auto;height:1.5px;background:#072f19}
+.step{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:0;padding:0 7px;text-align:center;position:relative}
+.symbol{height:75px;display:flex;align-items:center;justify-content:center;padding:0;margin:0 0 12px}
+.symbol img{width:64px;height:64px;object-fit:contain}
+.dot{width:9px;height:9px;flex:0 0 9px;transform:none;margin:0 0 20px}
+.copy{padding:0;max-width:100%}
+.name{font-size:clamp(18px,1.85vw,25px);line-height:1.14;letter-spacing:.012em}
+.time{font-size:clamp(17px,1.65vw,22px);line-height:1.2;margin-top:7px}
+@media(max-width:900px) and (min-width:761px){.timeline{width:96%}.scene{padding-left:12px;padding-right:12px}.name{font-size:19px}.time{font-size:17px}}
+@media(max-width:760px){
+ .scene{padding:20px 10px 32px;min-height:0!important}
+ .timeline{display:block;width:100%;max-width:none;margin:0;padding:10px 0 12px 5px}
+ .timeline::before{top:24px;bottom:24px;left:81px;right:auto;width:1.5px;height:auto}
+ .step{display:grid;grid-template-columns:81px 13px minmax(0,1fr);align-items:center;min-height:109px;padding:0;text-align:left}
+ .symbol{height:auto;margin:0;padding-right:8px}
+ .symbol img{width:65px;height:65px}
+ .dot{margin:0;transform:translateX(-4px)}
+ .copy{padding-left:10px;max-width:none}
+ .name{font-size:clamp(22px,5.3vw,29px)}
+ .time{font-size:clamp(19px,4.7vw,24px);margin-top:4px}
+ .scene-flower--yellow{right:-75px;bottom:-50px;top:auto;width:155px;opacity:.22;transform:none}
+}
+@media(max-width:350px){.timeline::before{left:69px}.step{grid-template-columns:69px 12px minmax(0,1fr)}.symbol img{width:56px;height:56px}.copy{padding-left:7px}.name{font-size:21px}.time{font-size:18px}}
+</style>
+</head>
 <body>
 <header class="hero" id="jour-j">
 <nav aria-label="Navigation principale" class="nav"><a aria-label="Accueil" href="index.html"><img alt="Logo N et Y" class="logo" src="https://noemiebgl.github.io/mariage-noemie-yvan/images/logo.png"/></a><button aria-controls="site-menu" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" type="button"><span aria-hidden="true" class="hamburger"><span></span><span></span><span></span></span></button><div class="navlinks" id="site-menu"><a href="index.html">Accueil</a><a aria-current="page" class="active" href="jour-j.html">Le jour J</a><a href="votre-venue.html">Votre venue</a><a href="tenues.html">Tenues</a><a href="rsvp.html">RSVP</a></div></nav>
