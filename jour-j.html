@@ -371,6 +371,26 @@ main{position:relative;z-index:1;background:#fff}
   .timeline { left: -24px; }
 }
 </style>
+<style>
+/* V13 — trois points décoratifs après la ligne, sans déplacer la frise.
+   Exclusivement sur ordinateur. */
+@media (min-width: 901px) {
+  .timeline::after {
+    content: "•••";
+    position: absolute;
+    top: 91px;
+    right: calc(10% - 102px);
+    transform: translateY(-50%);
+    color: #072f19;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+}
+</style>
 </head>
 <body>
 <header class="hero" id="jour-j">
