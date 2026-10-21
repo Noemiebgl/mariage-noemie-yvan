@@ -357,6 +357,20 @@ main{position:relative;z-index:1;background:#fff}
   .timeline .step:last-child .time { text-align: center; }
 }
 </style>
+<style>
+/* V12 — équilibrage sur la largeur réelle des intitulés (du C de Cérémonie
+   au ! de Soirée dansante), et respiration supplémentaire de la section.
+   Les règles mobiles restent strictement inchangées. */
+@media (min-width: 901px) {
+  .scene { padding-top: 74px; padding-bottom: 86px; }
+  /* L'extension du dernier libellé vers la droite est compensée à gauche. */
+  .timeline { left: -85px; }
+}
+@media (min-width: 761px) and (max-width: 900px) {
+  .scene { padding-top: 64px; padding-bottom: 76px; }
+  .timeline { left: -24px; }
+}
+</style>
 </head>
 <body>
 <header class="hero" id="jour-j">
