@@ -243,29 +243,40 @@ main{position:relative;z-index:1;background:#fff}
  .scene{min-height:610px}
 }
 @media(max-width:390px){.hero{min-height:365px}.hero h1{font-size:70px}.hero-content{padding-top:105px;padding-bottom:75px}}
-</style>
-<style>
-/* V4 — retour à la maquette validée : frise d'origine, cascade douce, voile blanc */
-.hero{background-image:url('images/banniere-jour-j.png');background-position:center 52%;}
-.hero::before{background:linear-gradient(180deg,rgba(255,255,255,.53) 0%,rgba(255,255,255,.45) 44%,rgba(255,255,255,.23) 100%);}
-.hero::after{background:linear-gradient(180deg,rgba(255,255,255,.43),rgba(255,255,255,0));}
-.hero-content{align-items:flex-start;}
-/* La composition florale originale reste à droite, sans cartes ni recentrage forcé. */
-.scene{background:#fff;}
-.scene::before{background-image:url('images/fond-frise.png');}
+
+/* V5 — Maquette : côte bretonne, décor floral indépendant et photo du Moulin raccourcie */
+.hero{background-image:url('images/bretagne.jpg');background-position:center 52%;min-height:405px}
+.hero::before{background:linear-gradient(180deg,rgba(255,255,255,.79) 0%,rgba(255,255,255,.66) 48%,rgba(255,255,255,.25) 100%)}
+.hero::after{background:linear-gradient(180deg,rgba(255,255,255,.48),transparent);height:115px}
+.hero-content{padding:100px 25px 65px;align-items:flex-start;justify-content:center}
+.hero h1{font-size:clamp(75px,8.5vw,112px)}
+.hero-ivy{display:none}
+.scene{overflow:hidden;isolation:isolate;min-height:0;background:#fff}
+.scene::before{display:none!important}
+.timeline{z-index:2}
+.scene-flower{position:absolute;display:block;z-index:1;pointer-events:none;object-fit:contain}
+.scene-flower--yellow{right:-20px;top:125px;width:clamp(190px,24vw,345px);transform:rotate(-7deg)}
+.scene-flower--bird{right:4%;bottom:-82px;width:clamp(150px,19vw,255px);transform:rotate(-12deg)}
+.scene-flower--leaf{right:5%;top:-125px;width:clamp(110px,15vw,195px);transform:rotate(140deg);opacity:.9}
+.place-photo{height:clamp(270px,29vw,400px);aspect-ratio:auto;object-fit:cover;object-position:center 52%}
 @media(max-width:760px){
- .hero{background-position:56% center;}
- .hero::before{background:linear-gradient(180deg,rgba(255,255,255,.68),rgba(255,255,255,.38));}
- .scene::before{opacity:.18;}
+ .hero{min-height:350px;background-position:center 50%}
+ .hero-content{padding:108px 14px 75px}
+ .hero h1{font-size:clamp(70px,15vw,90px)}
+ .scene-flower--yellow{right:-58px;top:185px;width:175px;opacity:.45}
+ .scene-flower--bird{right:-32px;bottom:-45px;width:145px;opacity:.48}
+ .scene-flower--leaf{right:-30px;top:-72px;width:130px;opacity:.55}
+ .timeline{position:relative;z-index:2}
+ .place-photo{height:245px;object-position:center center}
 }
-</style>
-</head>
+@media(max-width:390px){.hero{min-height:340px}.hero-content{padding-top:105px;padding-bottom:65px}}
+</style></head>
 <body>
 <header class="hero" id="jour-j">
 <nav aria-label="Navigation principale" class="nav"><a aria-label="Accueil" href="index.html"><img alt="Logo N et Y" class="logo" src="https://noemiebgl.github.io/mariage-noemie-yvan/images/logo.png"/></a><button aria-controls="site-menu" aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle" type="button"><span aria-hidden="true" class="hamburger"><span></span><span></span><span></span></span></button><div class="navlinks" id="site-menu"><a href="index.html">Accueil</a><a aria-current="page" class="active" href="jour-j.html">Le jour J</a><a href="votre-venue.html">Votre venue</a><a href="tenues.html">Tenues</a><a href="rsvp.html">RSVP</a></div></nav>
 <div aria-hidden="true" class="menu-backdrop"></div>
 <div class="hero-content"><div class="hero-copy"><h1>Le jour J</h1><div class="shortline"></div><p class="hero-date">MERCREDI 16 AOÛT 2028</p></div></div><img alt="" aria-hidden="true" class="hero-ivy" src="images/lierre-jour-j.png"/></header>
-<main><section aria-label="Programme du mariage" class="scene"><div class="timeline"><div class="step"><div class="symbol"><img alt="" src="https://noemiebgl.github.io/mariage-noemie-yvan/images/ceremonie.png"/></div><span class="dot"></span><div class="copy"><div class="name">CÉRÉMONIE</div><div class="time">Horaire à venir</div></div></div>
+<main><section aria-label="Programme du mariage" class="scene"><img class="scene-flower scene-flower--yellow" src="images/fleur-jaune-jour-j.png" alt="" aria-hidden="true"/><img class="scene-flower scene-flower--bird" src="images/fleur-secondaire-jour-j.png" alt="" aria-hidden="true"/><img class="scene-flower scene-flower--leaf" src="images/feuillage-jour-j.png" alt="" aria-hidden="true"/><div class="timeline"><div class="step"><div class="symbol"><img alt="" src="https://noemiebgl.github.io/mariage-noemie-yvan/images/ceremonie.png"/></div><span class="dot"></span><div class="copy"><div class="name">CÉRÉMONIE</div><div class="time">Horaire à venir</div></div></div>
 <div class="step"><div class="symbol"><img alt="" src="https://noemiebgl.github.io/mariage-noemie-yvan/images/photos.png"/></div><span class="dot"></span><div class="copy"><div class="name">PHOTOS</div><div class="time">Horaire à venir</div></div></div>
 <div class="step"><div class="symbol"><img alt="" src="https://noemiebgl.github.io/mariage-noemie-yvan/images/cocktail.png"/></div><span class="dot"></span><div class="copy"><div class="name">COCKTAIL</div><div class="time">Horaire à venir</div></div></div>
 <div class="step"><div class="symbol"><img alt="" src="https://noemiebgl.github.io/mariage-noemie-yvan/images/diner.png"/></div><span class="dot"></span><div class="copy"><div class="name">DÎNER</div><div class="time">Horaire à venir</div></div></div>
