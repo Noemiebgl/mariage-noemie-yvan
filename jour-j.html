@@ -336,6 +336,27 @@ main{position:relative;z-index:1;background:#fff}
   .scene-flower--yellow { width: 140px; right: -45px; bottom: -45px; }
 }
 </style>
+<style>
+/* V11 — centrage optique de la frise, alignement de la dernière étape,
+   suppression du vestige de la frise verticale sur la photo du Moulin. */
+.place-inner::before { display: none !important; }
+@media (min-width: 901px) {
+  .timeline { left: -34px; }
+  .timeline .step:last-child .copy {
+    width: max-content;
+    max-width: none;
+    text-align: center;
+    transform: translateX(14px);
+  }
+  .timeline .step:last-child .name { white-space: nowrap; }
+  .timeline .step:last-child .time { text-align: center; }
+}
+@media (min-width: 761px) and (max-width: 900px) {
+  .timeline { left: -10px; }
+  .timeline .step:last-child .copy { width: max-content; max-width: none; text-align: center; }
+  .timeline .step:last-child .time { text-align: center; }
+}
+</style>
 </head>
 <body>
 <header class="hero" id="jour-j">
