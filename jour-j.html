@@ -319,6 +319,23 @@ main{position:relative;z-index:1;background:#fff}
  .place-link{font-size:16px;padding:12px 19px}
 }
 </style>
+
+<style>
+/* V10 — dernière étape décalée, libellé sur une ligne et hibiscus allégé */
+@media (min-width: 901px) {
+  .timeline::before { right: calc(10% - 70px); }
+  .timeline .step:last-child { transform: translateX(29px); }
+  .timeline .step:last-child .copy { transform: translateX(14px); }
+  .timeline .step:last-child .name { white-space: nowrap; }
+  .scene-flower--yellow { width: clamp(132px, 14.45vw, 200px); right: -50px; bottom: -60px; }
+}
+@media (min-width: 761px) and (max-width: 900px) {
+  .timeline::before { right: calc(10% - 30px); }
+  .timeline .step:last-child { transform: translateX(10px); }
+  .timeline .step:last-child .name { white-space: nowrap; font-size: 18px; }
+  .scene-flower--yellow { width: 140px; right: -45px; bottom: -45px; }
+}
+</style>
 </head>
 <body>
 <header class="hero" id="jour-j">
