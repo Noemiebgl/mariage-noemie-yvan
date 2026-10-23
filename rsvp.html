@@ -197,7 +197,7 @@ body{color:#111111;font-weight:500}
 .rsvp-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(249,246,238,.03),rgba(7,47,25,.10));pointer-events:none}
 .rsvp-copy{text-align:center;padding:8px 0 18px}
 .rsvp-eyebrow{font-size:17px;font-weight:600;color:#0e4d7a;text-transform:uppercase;letter-spacing:.12em;margin:0 0 6px}
-.rsvp-copy h1{font-family:var(--script);font-weight:400;font-size:clamp(65px,6.3vw,100px);line-height:1.03;margin:0 0 6px;color:#111}
+.rsvp-copy h1{font-family:var(--script);font-weight:400;font-size:clamp(55px,5vw,78px);line-height:1.1;margin:0 0 6px;color:#111;white-space:nowrap;letter-spacing:-.015em}
 .rsvp-rule{width:43px;height:1px;background:#072f19;margin:10px auto 18px}
 .rsvp-deadline{font-size:23px;font-weight:600;color:#111;margin:0 0 9px}
 .rsvp-intro{font-size:21px;line-height:1.35;max-width:610px;margin:0 auto 13px;color:#111}
@@ -206,8 +206,8 @@ body{color:#111111;font-weight:500}
 .rsvp-form{display:block;width:100%;height:1340px;border:0;background:#fff}
 .rsvp-fallback{text-align:center;font-size:18px;margin:14px 0 0}
 .rsvp-fallback a{color:#0e4d7a;text-underline-offset:3px}
-@media(max-width:900px){.rsvp-layout{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:24px}.rsvp-visual,.rsvp-visual img.photo{min-height:650px;height:650px}.rsvp-copy h1{font-size:69px}}
-@media(max-width:760px){.rsvp-top{height:74px}.rsvp-main{padding:0 0 45px}.rsvp-layout{display:flex;flex-direction:column;gap:0}.rsvp-visual{position:relative;top:auto;min-height:0;height:235px;width:100%}.rsvp-visual img.photo{height:235px;min-height:0;object-position:center 42%}.rsvp-right{width:100%;padding:25px 12px 0}.rsvp-copy{padding:0 7px 12px}.rsvp-copy h1{font-size:clamp(64px,14vw,86px)}.rsvp-deadline{font-size:21px}.rsvp-intro{font-size:19px}.rsvp-note{font-size:17px}.rsvp-form{height:1500px}}
+@media(max-width:900px){.rsvp-layout{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:24px}.rsvp-visual,.rsvp-visual img.photo{min-height:650px;height:650px}.rsvp-copy h1{font-size:clamp(40px,5vw,60px)}}
+@media(max-width:760px){.rsvp-top{height:74px}.rsvp-main{padding:0 0 45px}.rsvp-layout{display:flex;flex-direction:column;gap:0}.rsvp-visual{position:relative;top:auto;min-height:0;height:235px;width:100%}.rsvp-visual img.photo{height:235px;min-height:0;object-position:center 42%}.rsvp-right{width:100%;padding:25px 12px 0}.rsvp-copy{padding:0 7px 12px}.rsvp-copy h1{font-size:clamp(43px,9vw,72px);white-space:normal}.rsvp-deadline{font-size:21px}.rsvp-intro{font-size:19px}.rsvp-note{font-size:17px}.rsvp-form{height:1500px}}
 </style>
 </head><body>
 <div class="rsvp-top"></div>
@@ -215,7 +215,7 @@ body{color:#111111;font-weight:500}
 <div class="menu-backdrop" aria-hidden="true"></div>
 <main class="rsvp-main"><div class="rsvp-layout">
 <div class="rsvp-visual"><img class="photo" src="https://noemiebgl.github.io/mariage-noemie-yvan/images/photo-couple.jpg" alt="Photographie des mariés — visuel provisoire à remplacer par la photographie fleurie de la maquette"></div>
-<div class="rsvp-right"><div class="rsvp-copy"><p class="rsvp-eyebrow">Votre réponse</p><h1>Serez-vous des nôtres ?</h1><div class="rsvp-rule"></div><p class="rsvp-deadline">Merci de répondre avant le 1er mai 2028</p><p class="rsvp-intro">Un questionnaire par personne, pour prendre en compte les réponses et les besoins de chacun.</p><p class="rsvp-note">🌿 Pensez à utiliser le même nom de fleur pour votre famille ou votre groupe.</p></div>
+<div class="rsvp-right"><div class="rsvp-copy"><p class="rsvp-eyebrow">Votre réponse</p><h1>Serez-vous des nôtres ?</h1><div class="rsvp-rule"></div><p class="rsvp-deadline">Merci de répondre avant le 1er mai 2028</p><p class="rsvp-intro">Un questionnaire par personne, pour prendre en compte les réponses et les besoins de chacun.</p><p class="rsvp-note">Pensez à utiliser le même nom de fleur pour votre famille ou votre groupe.</p></div>
 <div class="rsvp-form-shell"><iframe class="rsvp-form" title="Formulaire de réponse au mariage de Noémie et Yvan" src="https://docs.google.com/forms/d/e/1FAIpQLScLgzACZxXNyfEvLruVu9LJ8KLbYlU0FfSe66Ak-a7oLWGYDQ/viewform?embedded=true" loading="lazy">Chargement du formulaire…</iframe><p class="rsvp-fallback">Le formulaire ne s'affiche pas ? <a href="https://forms.gle/RYgB57HA4oZF6A7G6" target="_blank" rel="noopener noreferrer">Ouvrir le formulaire dans un nouvel onglet ↗</a></p></div></div>
 </div></main>
 <footer><nav class="footer-nav" aria-label="Navigation de pied de page"><a href="index.html">Accueil</a><a href="jour-j.html">Le jour J</a><a href="votre-venue.html">Votre venue</a><a href="tenues.html">Tenues</a><a href="rsvp.html">RSVP</a></nav><div class="footer-signature">Noémie &amp; Yvan · Au jardin de nos racines</div></footer>
